@@ -149,10 +149,11 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         border-bottom: 1px solid;
         transition: border-bottom-color .3s;
         cursor: pointer;
+        padding-left: 24px;
     }
 
     .siteLogo {
