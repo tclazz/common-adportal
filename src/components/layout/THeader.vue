@@ -1,5 +1,5 @@
 <template>
-    <div class="headerWrapper">
+    <div :class="['headerWrapper',darkTheme ? 'themeDark':'themeLight']">
         <div class="leftOperations">
             <div class="headerItem" v-on:click="collapseSidebar">
                 <a-icon :type="isMobile ? (showAsideDrawer ? 'menu-unfold':'menu-fold'):(collapseAside ? 'menu-unfold':'menu-fold')"/>
@@ -43,6 +43,7 @@
                 collapseAside: false,
                 isMobile: this.$store.state.WebStatus.isMobile,
                 isFullscreen: false,
+                darkTheme: this.$store.state.WebStatus.darkTheme,
                 showAsideDrawer:this.$store.state.WebStatus.showAsideDrawer,
             }
         },
@@ -74,6 +75,10 @@
 
         },
         watch: {
+            '$store.state.WebStatus.darkTheme': function () {
+                let that = this;
+                that.darkTheme = that.$store.state.WebStatus.darkTheme;
+            },
             '$store.state.WebStatus.isMobile': function (newValue, oldValue) {
                 let that = this;
                 that.isMobile = that.$store.state.WebStatus.isMobile;
@@ -98,6 +103,16 @@
         align-items: center;
         justify-content: flex-start;
         flex-direction: row;
+    }
+
+    .headerWrapper.themeDark {
+        color: rgba(255, 255, 255, 0.65);
+        background: #001529;
+    }
+
+    .headerWrapper.themeLight {
+        color: rgba(0, 0, 0, 0.65);
+        background: #fff;
     }
 
     .headerItem {

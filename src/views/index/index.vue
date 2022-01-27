@@ -110,6 +110,7 @@
         right: 0;
         box-shadow: 0 1px 4px rgba(0, 21, 41, .08);
         z-index: 12;
+        transition: all 0.3s cubic-bezier(0.2, 0, 0, 1) 0s;
     }
 
     .tclazz-header.asideOpen {
