@@ -6,6 +6,10 @@
             </div>
         </div>
         <div class="headerOperations">
+            <div class="headerItem">
+                <a-avatar :size="18" style="backgroundColor:#2b92e4" icon="plus" />
+                <span style="margin-left: 10px">新建</span>
+            </div>
             <template v-if="!isMobile">
                 <div class="headerItem">
                     <a-icon type="question-circle"/>
@@ -107,7 +111,7 @@
         cursor: pointer;
         -webkit-transition: all .3s, padding 0s;
         transition: all .3s, padding 0s;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 25px;
     }
 
