@@ -1,5 +1,7 @@
 <template>
-    
+    <div class="footerWrapper">
+        <span>This is Footer</span>
+    </div>
 </template>
 
 <script>
@@ -9,5 +11,10 @@
 </script>
 
 <style scoped>
-
+    .footerWrapper {
+        width: 100%;
+        padding: 10px 10px;
+        background-color: #eff2f8;
+        text-align: center;
+    }
 </style>
