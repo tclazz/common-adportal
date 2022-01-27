@@ -4,7 +4,8 @@ import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import {isIE} from '@/utils/tool.js'
 import {
-    loginRouter
+    loginRouter,
+    indexRouter
 } from './otherRouters'
 
 Vue.use(VueRouter)
@@ -19,9 +20,10 @@ const defaultIcoUrl = "/favicon.ico"
 const routes = [
     {
         path: '/',
-        redirect: '/login'
+        redirect: '/index'
     },
     loginRouter,
+    indexRouter,
 ]
 
 const router = new VueRouter({
