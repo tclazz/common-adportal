@@ -13,6 +13,7 @@
             <div class="tclazz-footer">
                 <t-clazz-footer/>
             </div>
+            <a-back-top />
         </div>
         <a-drawer
                 :title="null"
@@ -146,5 +147,6 @@
 
     .tclazz-content {
         padding: 10px;
+        min-height: 2300px;
     }
 </style>
