@@ -2,7 +2,7 @@
     <div class="headerWrapper">
         <div class="leftOperations">
             <div class="headerItem" v-on:click="collapseSidebar">
-                <a-icon type="menu-fold"/>
+                <a-icon :type="isMobile ? (showAsideDrawer ? 'menu-unfold':'menu-fold'):(collapseAside ? 'menu-unfold':'menu-fold')"/>
             </div>
         </div>
         <div class="headerOperations">
