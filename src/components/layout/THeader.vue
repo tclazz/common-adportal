@@ -6,6 +6,9 @@
             </div>
         </div>
         <div class="headerOperations">
+            <div class="headerItem" v-on:click="changeTheme">
+                <a-icon type="skin"/>
+            </div>
             <div class="headerItem">
                 <a-avatar :size="18" style="backgroundColor:#2b92e4" icon="plus" />
                 <span style="margin-left: 10px">新建</span>
@@ -103,6 +106,7 @@
         align-items: center;
         justify-content: flex-start;
         flex-direction: row;
+        transition: all 0.3s cubic-bezier(0.2, 0, 0, 1) 0s;
     }
 
     .headerWrapper.themeDark {
