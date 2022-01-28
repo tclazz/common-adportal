@@ -34,7 +34,7 @@ router.beforeEach(function (to, from, next) {
     NProgress.start()
     if (!isIE()){
         dynamicSetFavicon(to.meta.favicon ? to.meta.favicon : defaultIcoUrl)
-        document.title = to.meta.title ? to.meta.title : 'XXX-管理系统'
+        document.title = to.meta.title ? to.meta.title : '通用后台管理系统'
         next()
     } else {
         window.location.href = '/notSupport.html'

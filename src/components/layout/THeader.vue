@@ -1,11 +1,18 @@
 <template>
-    <div class="headerWrapper">
+    <div :class="['headerWrapper',darkTheme ? 'themeDark':'themeLight']">
         <div class="leftOperations">
             <div class="headerItem" v-on:click="collapseSidebar">
-                <a-icon type="menu-fold"/>
+                <a-icon :type="isMobile ? (showAsideDrawer ? 'menu-unfold':'menu-fold'):(collapseAside ? 'menu-unfold':'menu-fold')"/>
             </div>
         </div>
         <div class="headerOperations">
+            <div class="headerItem" v-on:click="changeTheme">
+                <a-icon type="skin"/>
+            </div>
+            <div class="headerItem">
+                <a-avatar :size="18" style="backgroundColor:#2b92e4" icon="plus" />
+                <span style="margin-left: 10px">新建</span>
+            </div>
             <template v-if="!isMobile">
                 <div class="headerItem">
                     <a-icon type="question-circle"/>
@@ -39,6 +46,7 @@
                 collapseAside: false,
                 isMobile: this.$store.state.WebStatus.isMobile,
                 isFullscreen: false,
+                darkTheme: this.$store.state.WebStatus.darkTheme,
                 showAsideDrawer:this.$store.state.WebStatus.showAsideDrawer,
             }
         },
@@ -70,6 +78,10 @@
 
         },
         watch: {
+            '$store.state.WebStatus.darkTheme': function () {
+                let that = this;
+                that.darkTheme = that.$store.state.WebStatus.darkTheme;
+            },
             '$store.state.WebStatus.isMobile': function (newValue, oldValue) {
                 let that = this;
                 that.isMobile = that.$store.state.WebStatus.isMobile;
@@ -94,6 +106,17 @@
         align-items: center;
         justify-content: flex-start;
         flex-direction: row;
+        transition: all 0.3s cubic-bezier(0.2, 0, 0, 1) 0s;
+    }
+
+    .headerWrapper.themeDark {
+        color: rgba(255, 255, 255, 0.65);
+        background: #001529;
+    }
+
+    .headerWrapper.themeLight {
+        color: rgba(0, 0, 0, 0.65);
+        background: #fff;
     }
 
     .headerItem {
@@ -107,7 +130,7 @@
         cursor: pointer;
         -webkit-transition: all .3s, padding 0s;
         transition: all .3s, padding 0s;
-        font-size: 18px;
+        font-size: 16px;
         line-height: 25px;
     }
 

@@ -9,7 +9,7 @@ export default new Vuex.Store({
       isMobile:false,
       collapseAside:false,
       showAsideDrawer:false,
-      darkTheme:false,
+      darkTheme:true,
       currentWindowWidth:0,
       //当前选择的菜单项目
       selectedAsideMenu:[]
