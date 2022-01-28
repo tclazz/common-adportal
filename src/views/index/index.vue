@@ -105,7 +105,7 @@
     }
 
     .tclazz-header {
-        height: 48px;
+        height: 64px;
         position: fixed;
         top: 0;
         right: 0;
@@ -129,7 +129,7 @@
     .tclazz-main {
         flex: 1;
         min-height: 100vh;
-        padding-top: 48px;
+        padding-top: 64px;
         transition: all 0.3s cubic-bezier(0.2, 0, 0, 1) 0s;
     }
 
@@ -147,6 +147,6 @@
 
     .tclazz-content {
         padding: 10px;
-        min-height: calc(100vh - 96px);
+        min-height: calc(100vh - 128px);
     }
 </style>
