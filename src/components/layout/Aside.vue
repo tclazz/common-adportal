@@ -88,6 +88,9 @@
             },
             onMenuItemClick(item){
                 this.$store.commit('updateSelectedAsideMenu', item.key);
+                if (item.keyPath.length <= 1){
+                    this.openKeys = [];
+                }
             }
         },
         mounted() {
