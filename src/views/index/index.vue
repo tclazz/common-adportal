@@ -147,6 +147,6 @@
 
     .tclazz-content {
         padding: 10px;
-        min-height: 2300px;
+        min-height: calc(100vh - 96px);
     }
 </style>

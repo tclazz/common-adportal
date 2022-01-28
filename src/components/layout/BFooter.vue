@@ -14,7 +14,7 @@
     .footerWrapper {
         width: 100%;
         padding: 10px 10px;
-        background-color: #eff2f8;
+        background-color: #ffffff;
         text-align: center;
     }
 </style>
