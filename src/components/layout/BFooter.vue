@@ -16,5 +16,10 @@
         padding: 10px 10px;
         background-color: #ffffff;
         text-align: center;
+        min-height: 64px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
     }
 </style>
