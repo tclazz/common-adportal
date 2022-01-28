@@ -143,8 +143,8 @@
     }
 
     .tclazz-brand {
-        height: 48px;
-        line-height: 48px;
+        height: 64px;
+        line-height: 64px;
         width: 100%;
         display: flex;
         flex-direction: row;
