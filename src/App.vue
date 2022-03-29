@@ -9,17 +9,22 @@
         data() {
             return {}
         },
-        methods: {},
+        methods: {
+            screenWidthListener() {
+                let that = this;
+                window.screenWidth = document.body.clientWidth;
+                that.$store.commit('updateWindowWidth', window.screenWidth);
+                window.onresize = () => {
+                    return (() => {
+                        window.screenWidth = document.body.clientWidth;
+                        that.$store.commit('updateWindowWidth', window.screenWidth);
+                    })()
+                };
+            }
+        },
         mounted() {
             let that = this;
-            window.screenWidth = document.body.clientWidth;
-            that.$store.commit('updateWindowWidth', window.screenWidth);
-            window.onresize = () => {
-                return (() => {
-                    window.screenWidth = document.body.clientWidth;
-                    that.$store.commit('updateWindowWidth', window.screenWidth);
-                })()
-            };
+            that.screenWidthListener();
         }
     }
 </script>

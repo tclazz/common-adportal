@@ -3,6 +3,7 @@
         <div :class="['tclazz-aside',collapseAside ? 'collapsed' : 'asideOpen',isMobile ? 'asideHidden':'']">
             <t-clazz-aside/>
         </div>
+        <vue-scroll :ops="ops" style="width: 100%;height: 100%">
         <div :class="['tclazz-main',collapseAside ? 'asideCollapsed' : 'asideOpen',isMobile ? 'asideHidden':'']">
             <div :class="['tclazz-header',collapseAside ? 'asideCollapsed' : 'asideOpen',isMobile ? 'asideHidden':'']">
                 <t-clazz-header/>
@@ -15,6 +16,7 @@
             </div>
             <a-back-top />
         </div>
+        </vue-scroll>
         <a-drawer
                 :title="null"
                 placement="left"
@@ -43,6 +45,8 @@
                 collapseAside: this.$store.state.WebStatus.collapseAside,
                 isMobile: this.$store.state.WebStatus.isMobile,
                 showAsideDrawer: this.$store.state.WebStatus.showAsideDrawer,
+                //滚动条配置
+                ops: this.$store.state.scrollBarOptions,
             }
         },
         methods: {
@@ -128,7 +132,7 @@
 
     .tclazz-main {
         flex: 1;
-        min-height: 100vh;
+        height: 100vh;
         padding-top: 64px;
         transition: all 0.3s cubic-bezier(0.2, 0, 0, 1) 0s;
     }
